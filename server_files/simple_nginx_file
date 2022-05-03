@@ -6,7 +6,7 @@ server {
         root /var/www/PROJECT_NAME/templates/html;
         index index.html index.htm;
 
-        server_name NAZWA_STRONY www.NAZWA_STRONY;
+        server_name DOMAIN www.DOMAIN;
 
         location / {
                 include proxy_params;
