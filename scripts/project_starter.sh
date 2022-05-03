@@ -94,7 +94,7 @@ chown -R $project_user:$project_user $project_folder
 systemctl enable $project_name
 
 # Done.
-python3 $project_folder/scripts/banner.py
+python3 $projects_folder/projects_strater/scripts/banner.py
 
 echo " "
 echo "gz"
