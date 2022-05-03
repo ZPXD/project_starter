@@ -1,5 +1,6 @@
 # Some constans:
 domena=whatxdd.com
+project_name=what_what
 project_user=root # change it
 project_repo=https://github.com/ZPXD/what_what.git # change it
 projects_folder=/var/www
@@ -67,13 +68,12 @@ chmod -R 775 $projects_folder
 
 
 # Project starter.
-git clone https://github.com/ZPXD/project_starter.git $projects_folder
+git clone https://github.com/ZPXD/project_starter.git $projects_folder/project_starter
 
 
 # Project.
 
-git clone $project_repo $projects_folder
-project_name=$(basename `git rev-parse --show-toplevel`)
+git clone $project_repo $projects_folder/$project_name
 project_folder=$projects_folder/$project_name
 
 # Environment.
