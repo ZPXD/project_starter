@@ -41,7 +41,7 @@ def create_nginx_and_gunicorn_files(projects_folder, project_name, domain):
 	for line in nginx_file_template:
 		l = line.strip()
 		if l.startswith('server_name'):
-			line = line.replace('DOMAIN', project)
+			line = line.replace('DOMAIN', domain)
 		if l.startswith('root') or l.startswith('proxy_pass'):
 			line = line.replace('PROJECT_NAME', project_name)
 		nginx_file += line + '\n'
