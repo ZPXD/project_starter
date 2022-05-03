@@ -9,6 +9,6 @@ def remove_files(project_name, domain):
 if __name__ == '__main__':
     if len(sys.argv) == 3:
         project_name = sys.argv[1]
-        project_name = sys.argv[2]
+        domain = sys.argv[2]
         remove_files(project_name, domain)
         print('done')
