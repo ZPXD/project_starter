@@ -1,6 +1,6 @@
 ## ZPXD Project Starter
 
-Skrytp dzięki któremu szybko postawisz projekt na serwerze (przeczytaj wymagania). 
+Skrypt dzięki któremu szybko postawisz projekt na serwerze (przeczytaj wymagania). 
 
 
 ```
