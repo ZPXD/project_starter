@@ -74,7 +74,7 @@ git clone https://github.com/ZPXD/project_starter.git $projects_folder
 
 git clone $project_repo $projects_folder
 project_name=$(basename `git rev-parse --show-toplevel`)
-project_folder=/$projects_folder/$
+project_folder=/$projects_folder/$project_name
 
 # Environment.
 
