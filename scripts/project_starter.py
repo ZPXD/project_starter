@@ -69,7 +69,7 @@ def create_nginx_and_gunicorn_files(projects_folder, project_name, domain):
 		elif l.startswith('WorkingDirectory'):
 			l = 'WorkingDirectory=' + project_path
 		elif l.startswith('Environment'):
-			l = 'Environment=' + project_venv_path + '/bin'
+			l = 'Environment="PATH=' + project_venv_path + '/bin"'
 		elif l.startswith('ExecStart'):
 			l = 'ExecStart=' + project_venv_path + '/bin/gunicorn --workers 3 --bind unix:{}.sock -m 007 app:app'.format(project_name)
 
