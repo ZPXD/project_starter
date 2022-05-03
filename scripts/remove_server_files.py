@@ -3,7 +3,7 @@ import sys
 
 def remove_files(project_name, domain):
     os.system('sudo rm /etc/nginx/sites-available/{}'.format(domain))
-    os.system('sudo rm /etc/nginx/sites-enabled/{}'.format(domain)
+    os.system('sudo rm /etc/nginx/sites-enabled/{}'.format(domain))
     os.system('sudo rm /etc/systemd/system/{}.service'.format(project_name))
 
 if __name__ == '__main__':
