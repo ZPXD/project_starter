@@ -87,7 +87,7 @@ export FLASK_APP=app.py
 pip3 install -r $project_folder/requirements.txt
 
 # Server files landing.
-python3 $projects_folder/project_starter/scripts/project_starter.py $project_folder $project_name $domena 
+python3 $projects_folder/project_starter/scripts/project_starter.py $projects_folder $project_name $domena 
 
 # Grant user the rights to the project folder.
 chown -R $project_user:$project_user $project_folder
