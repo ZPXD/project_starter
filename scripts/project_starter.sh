@@ -88,7 +88,7 @@ pip3 install -r $project_folder/$projects_name/requirements.txt
 
 
 # Server files landing.
-python3 $project_folder/project_starter/scripts/project_starter.sh $project_folder $project_name $domena 
+python3 $project_folder/project_starter/scripts/project_starter.py $project_folder $project_name $domena 
 
 # Grant user the rights to the project folder.
 chown -R $project_user:$project_user $project_folder
