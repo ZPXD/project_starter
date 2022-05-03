@@ -78,9 +78,9 @@ git clone $project_repo $project_folder
 
 # Environment.
 
-venv=$project_folder/$project_namevenv
+project_venv=$project_folder/$project_name+venv
 
-python3 -m venv $venv
+python3 -m venv $project_venv
 source $venv/bin/activate
 
 export FLASK_APP=app.py
