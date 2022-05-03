@@ -85,6 +85,7 @@ source $venv/bin/activate
 
 export FLASK_APP=app.py
 pip3 install -r $project_folder/requirements.txt
+pip3 install gunicorn
 
 # Server files landing.
 python3 $projects_folder/project_starter/scripts/project_starter.py $projects_folder $project_name $domena 
