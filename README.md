@@ -21,10 +21,19 @@ Wszystkie pliki aplikacji znajdą się w folderze `/var/www/app_name`
 3. Repozytorium z projektem zaprogramowanym we Flasku w stylu `app_name/app.py` z `requirements.txt`
 4. Przypisanie wartości - napisz w terminalu:
 
-
 ```
 domena=    [tu wpisz nazwę Twojej domeny bez www. ]
 project_name=what_what    [projekt nazywa się tak jak Twoje repozytorium]
 project_user=root # change it
 project_repo=https://github.com/ZPXD/what_what.git # git z repo projektu
 ```
+
+**Aby projekt nie był dostępny dla przeglądarek:**
+
+1. zamien skrypt w localhostowy w `app_name/app.py` w `app.run('localhost', debug=True)` 
+2. połączysz się ze swojej przeglądarki np. po tunelu, wpisz w terminal u siebie: 
+```
+ssh -L 5000:localhost:80 -i klucz username@1.1.1.1 # <-------- EDYTUJ username i ip :)
+```
+
+z fartem
