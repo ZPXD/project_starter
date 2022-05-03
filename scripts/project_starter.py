@@ -36,7 +36,7 @@ def create_nginx_and_gunicorn_files(projects_folder, project_name, domain):
 	# Nginx file landing:
 	
 	nginx_file = ''
-	nginx_file_template = os.path.join(projects_folder, 'project_starter', 'server_files', 'simple_gunicorn_file')
+	nginx_file_template = os.path.join(projects_folder, 'project_starter', 'server_files', 'simple_nginx_file')
 	nginx_file_template = open(nginx_file_template).readlines()
 	for line in nginx_file_template:
 		l = line.strip()
@@ -44,7 +44,7 @@ def create_nginx_and_gunicorn_files(projects_folder, project_name, domain):
 			line = line.replace('PROJECT_NAME', project_name)
 		if l.startswith('root'):
 			line = line.replace('DOMAIN_NAME', domain)
-		nginx_file += line
+		nginx_file += line + '\n'
 
 	with open("/etc/nginx/sites-available/{}".format(domain), "w") as f:
 		f.write(nginx_file)
@@ -62,7 +62,7 @@ def create_nginx_and_gunicorn_files(projects_folder, project_name, domain):
 	# Side note: gunicorn file is quite crazy now. To be upgraded. (But it runs.)
 	
 	gunicorn_file = ''
-	gunicorn_file_template = os.path.join(projects_folder, 'project_starter', 'server_files', 'simple_nginx_file')
+	gunicorn_file_template = os.path.join(projects_folder, 'project_starter', 'server_files', 'simple_gunicorn_file')
 	gunicorn_file_template = open(gunicorn_file_template).readlines() 
 	for l in gunicorn_file_template:
 		if l.startswith('User'):
@@ -73,7 +73,8 @@ def create_nginx_and_gunicorn_files(projects_folder, project_name, domain):
 			l = 'Environment="PATH=' + project_venv_path + '/bin"'
 		elif l.startswith('ExecStart'):
 			l = 'ExecStart=' + project_venv_path + '/bin/gunicorn --workers 3 --bind unix:{}.sock -m 007 app:app'.format(project_name)
-
+		gunicorn_file += l + '\n'
+		
 	where_it_needs_to_be = '/etc/systemd/system/{}.service'.format(project_name)
 	with open(where_it_needs_to_be, "w") as f:
 		f.write(gunicorn_file)
