@@ -73,8 +73,8 @@ git clone https://github.com/ZPXD/project_starter.git $projects_folder/project_s
 
 # Project.
 
-git clone $project_repo $projects_folder/$project_name
 project_folder=$projects_folder/$project_name
+git clone $project_repo $project_folder
 
 # Environment.
 
@@ -84,11 +84,10 @@ python3 -m venv $venv
 source $venv/bin/activate
 
 export FLASK_APP=app.py
-pip3 install -r $project_folder/$projects_name/requirements.txt
-
+pip3 install -r $project_folder/requirements.txt
 
 # Server files landing.
-python3 $projects_folder/project_starter/project_starter/scripts/project_starter.py $project_folder $project_name $domena 
+python3 $projects_folder/project_starter/scripts/project_starter.py $project_folder $project_name $domena 
 
 # Grant user the rights to the project folder.
 chown -R $project_user:$project_user $project_folder
