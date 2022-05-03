@@ -35,5 +35,3 @@ project_repo=https://github.com/ZPXD/what_what.git # git z repo projektu
 ```
 ssh -L 5000:localhost:80 -i klucz username@1.1.1.1 # <-------- EDYTUJ username i ip :)
 ```
-
-z fartem
