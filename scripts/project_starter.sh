@@ -1,4 +1,10 @@
+# Project starter
+
+# Change some constans below
+
+
 # Some constans:
+
 domena=whatxdd.com
 project_name=what_what
 project_user=root # change it
@@ -43,10 +49,12 @@ systemctl start nginx
 # Soft
 
 # Required soft.
+
 apt install curl --yes
 apt install git --yes
 
 # Python 3.
+
 apt install python3-pip --yes 
 apt install python3-dev --yes 
 apt install python3-venv --yes 
@@ -56,6 +64,7 @@ apt install libffi-dev --yes
 apt install python3-setuptools --yes
 
 # Useful.
+
 apt install nano --yes
 apt install tree --yes
 
@@ -68,6 +77,7 @@ chmod -R 775 $projects_folder
 
 
 # Project starter.
+
 git clone https://github.com/ZPXD/project_starter.git $projects_folder/project_starter
 
 
@@ -75,6 +85,7 @@ git clone https://github.com/ZPXD/project_starter.git $projects_folder/project_s
 
 project_folder=$projects_folder/$project_name
 git clone $project_repo $project_folder
+
 
 # Environment.
 
