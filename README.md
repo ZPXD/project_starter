@@ -15,7 +15,7 @@ Wszystkie pliki aplikacji znajdą się w folderze `/var/www/app_name`
 
 Połączysz się z projektem swojej przeglądarki np. po tunelu, wpisz w `terminalu/powershellu` u siebie na komputerze: 
 ```
-ssh -L 5000:localhost:80 -i klucz username@1.1.1.1 # <-------- EDYTUJ username i ip :)
+ssh -L 5000:localhost:80 -i klucz username@1.1.1.1 # <-------- EDYTUJ username i ip :) bez "-i klucz" jeżeli łączysz się po haśle.
 ```
 
 
