@@ -55,7 +55,7 @@ def create_nginx_and_gunicorn_files(projects_folder, project_name, domain):
 	# Paths.
 	
 	project_path = os.path.join(projects_folder, project_name)
-	project_venv_path = os.path.join(project_path, '{}venv'.join(project_name) )
+	project_venv_path = os.path.join(project_path, '{}venv'.format(project_name) )
 
 	# Gunicorn file landing.
 
