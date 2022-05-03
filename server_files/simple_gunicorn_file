@@ -4,9 +4,9 @@ After=network.target
 [Service]
 User=root
 Group=www-data
-WorkingDirectory=/var/www/flaga
-Environment="PATH=/var/www/flaga/flagaenv/bin"
-ExecStart=/var/www/flaga/flagaenv/bin/gunicorn --workers 3 --bind unix:flaga.sock -m 007 app:app
+WorkingDirectory=/var/www/project_name
+Environment="PATH=/var/www/project_name/project_namevenv/bin"
+ExecStart=/var/www/project_name/project_namevenv/bin/gunicorn --workers 3 --bind unix:project_name.sock -m 007 app:app
 
 [Install]
 WantedBy=multi-user.target
