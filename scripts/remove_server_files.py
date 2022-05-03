@@ -1,4 +1,5 @@
 import os
+import sys
 
 def remove_files(project_name, domain):
     os.system('sudo rm /etc/nginx/sites-available/{}'.format(domain))
