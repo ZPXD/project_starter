@@ -25,9 +25,9 @@ ssh -L 5000:localhost:80 -i klucz username@1.1.1.1 # <-------- EDYTUJ username i
 4. Przypisanie wartości - napisz w terminalu:
 
 ```
-domena=    [tu wpisz nazwę Twojej domeny bez www. ]
-project_name=what_what    [projekt nazywa się tak jak Twoje repozytorium]
-project_user=root # change it
+domena=     # [tu wpisz nazwę Twojej domeny bez www. ]
+project_name=what_what     # [projekt nazywa się tak jak Twoje repozytorium]
+project_user=root # [raczej zmien na uzytkownika]
 project_repo=https://github.com/ZPXD/what_what.git # git z repo projektu
 ```
 
