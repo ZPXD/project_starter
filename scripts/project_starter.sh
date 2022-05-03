@@ -1,5 +1,4 @@
 # Some constans:
-
 project_user = root # change it
 project_repo = https://github.com/ZPXD/flaga.git # change it
 projects_folder = /var/www
@@ -67,7 +66,6 @@ chmod -R 775 $projects_folder
 
 
 # Project starter.
-
 git clone https://github.com/ZPXD/project_starter.git $projects_folder
 
 
