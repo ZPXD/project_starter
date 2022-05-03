@@ -80,9 +80,11 @@ git clone $project_repo $project_folder
 
 project_venv=$project_folder/$project_name
 project_venv+=venv
+activate_venv_path=$project_venv
+activate_venv_path+=/bin/activate
 
 python3 -m venv $project_venv
-source $project_venv/bin/activate
+source $activate_venv_path
 
 export FLASK_APP=app.py
 pip3 install -r $project_folder/requirements.txt
