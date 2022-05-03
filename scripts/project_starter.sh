@@ -82,7 +82,7 @@ project_venv=$project_folder/$project_name
 project_venv+=venv
 
 python3 -m venv $project_venv
-source $venv/bin/activate
+source $project_venv/bin/activate
 
 export FLASK_APP=app.py
 pip3 install -r $project_folder/requirements.txt
