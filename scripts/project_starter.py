@@ -36,11 +36,11 @@ def create_nginx_and_gunicorn_files(projects_folder, project_name, domain):
 	# Nginx file landing:
 	
 	nginx_file = ''
-	nginx_file_template = os.path.join(starter_path, 'server_files', 'simple_gunicorn_file')
+	nginx_file_template = os.path.join(projects_folder, 'project_starter', 'server_files', 'simple_gunicorn_file')
 	nginx_file_template = open(nginx_file_template).readlines()
 	for line in nginx_file_template:
 		l = line.strip()
-		if l.startswith('server_name') or l.startswith(proxy_pass):
+		if l.startswith('server_name') or l.startswith('proxy_pass'):
 			line = line.replace('PROJECT_NAME', project_name)
 		if l.startswith('root'):
 			line = line.replace('DOMAIN_NAME', domain)
