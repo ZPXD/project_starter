@@ -1,6 +1,10 @@
 ## ZPXD Project Starter
 
-Skrytpy dzięki któremu szybko postawisz projekt na serwerze dostępny dla przeglądarek.
+Skrytpy dzięki któremu szybko postawisz projekt na serwerze.
+
+
+
+A. dostępny dla przeglądarek.
 
 ```
 # Unite the clans
@@ -28,3 +32,7 @@ project_name=what_what    [projekt nazywa się tak jak Twoje repozytorium]
 project_user=root # change it
 project_repo=https://github.com/ZPXD/what_what.git # git z repo projektu
 ```
+
+B. 
+
+C. 
