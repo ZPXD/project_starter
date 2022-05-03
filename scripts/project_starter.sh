@@ -5,10 +5,10 @@
 
 # Some constans:
 
-domena=whatxdd.com
-project_name=what_what
-project_user=root # change it
-project_repo=https://github.com/ZPXD/what_what.git # change it
+domena=$1
+project_name=$2
+project_user=$3
+project_repo=$4
 projects_folder=/var/www
 
 
