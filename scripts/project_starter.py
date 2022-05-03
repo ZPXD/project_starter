@@ -66,7 +66,7 @@ def create_nginx_and_gunicorn_files(projects_folder, project_name, domain):
 	gunicorn_file_template = open(gunicorn_file_template).readlines() 
 	for l in gunicorn_file_template:
 		if l.startswith('User'):
-			l = 'User=' + project_user
+			l = 'User=root'
 		elif l.startswith('WorkingDirectory'):
 			l = 'WorkingDirectory=' + project_path
 		elif l.startswith('Environment'):
