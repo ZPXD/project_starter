@@ -1,5 +1,3 @@
-
-
 # Some constans:
 
 project_user = root # change it
