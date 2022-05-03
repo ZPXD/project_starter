@@ -68,11 +68,11 @@ def create_nginx_and_gunicorn_files(projects_folder, project_name, domain):
 		if l.startswith('User'):
 			l = 'User=root'
 		elif l.startswith('WorkingDirectory'):
-			l = 'WorkingDirectory=' + project_path
+			l = 'WorkingDirectory='.format(project_path)
 		elif l.startswith('Environment'):
-			l = 'Environment="PATH=' + project_venv_path + '/bin"'
+			l = 'Environment="PATH={}/bin"'.format(project_venv_path)
 		elif l.startswith('ExecStart'):
-			l = 'ExecStart=' + project_venv_path + '/bin/gunicorn --workers 3 --bind unix:{}.sock -m 007 app:app'.format(project_name)
+			l = 'ExecStart={}/bin/gunicorn --workers 3 --bind unix:{}.sock -m 007 app:app'.format(project_venv_path, project_name)
 		gunicorn_file += l + '\n'
 		
 	where_it_needs_to_be = '/etc/systemd/system/{}.service'.format(project_name)
