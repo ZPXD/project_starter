@@ -1,6 +1,6 @@
 # Some constans:
 project_user = root # change it
-project_repo = https://github.com/ZPXD/flaga.git # change it
+project_repo = https://github.com/ZPXD/what_what.git # change it
 projects_folder = /var/www
 
 
