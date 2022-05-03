@@ -12,7 +12,7 @@ def create_nginx_and_gunicorn_files(projects_folder, project_name, domain):
 	# CHECK 1 - Projects present.
 	
 	print(projects_folder, project_name, domain)
-	pf_files = os.listdir(project_folder)
+	pf_files = os.listdir(projects_folder)
 	if 'project_starter' in pf_files and project_name in pf_files:
 		pass
 	else:
