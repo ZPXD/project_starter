@@ -1,1 +1,2 @@
 pwd
+apt install tree
