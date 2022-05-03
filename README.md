@@ -23,8 +23,8 @@ Wszystkie pliki aplikacji znajdą się w folderze `/var/www/app_name`
 
 
 ```
-domena=    [bez www]
-project_name=    [taki jak nazwa repo]
+domena=    [tu wpisz nazwę Twojej domeny bez www. ]
+project_name=what_what    [projekt nazywa się tak jak Twoje repozytorium]
 project_user=root # change it
 project_repo=https://github.com/ZPXD/what_what.git # git z repo projektu
 ```
