@@ -78,7 +78,8 @@ git clone $project_repo $project_folder
 
 # Environment.
 
-project_venv=$project_folder/$project_namevenv
+project_venv=$project_folder/$project_name
+project_venv+=venv
 
 python3 -m venv $project_venv
 source $venv/bin/activate
