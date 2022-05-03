@@ -31,7 +31,7 @@ project_repo=https://github.com/ZPXD/what_what.git # git z repo projektu
 **Aby projekt nie był dostępny dla przeglądarek:**
 
 1. zamien skrypt w localhostowy w `app_name/app.py` w `app.run('localhost', debug=True)` 
-2. połączysz się ze swojej przeglądarki np. po tunelu, wpisz w terminal u siebie: 
+2. połączysz się ze swojej przeglądarki np. po tunelu, wpisz w `terminalu/powershellu` u siebie: 
 ```
 ssh -L 5000:localhost:80 -i klucz username@1.1.1.1 # <-------- EDYTUJ username i ip :)
 ```
