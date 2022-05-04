@@ -13,7 +13,7 @@ echo " "
 
 user_name=$(read -p 'Username (allowed characters: a-z, A-Z, 0-9, -, _, for more see NAME_REGEX): ')
 klucz=zpxd_
-klucz+=$username
+klucz+=$user_name
 server_ip=`curl -s http://checkip.amazonaws.com`
 
 
