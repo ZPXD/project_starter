@@ -1,4 +1,4 @@
-### Uruchamianie wielu projektów z uprawnieniami root w systemach Linux z systemd.
+### Uruchamianie wielu projektów z uprawnieniami zwykłego uzytkownika w systemach Linux z systemd.
 
 ##### UWAGA: Level 666 -> Tylko dla zaawansowanych ogarniaczy.
 
