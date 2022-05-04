@@ -33,9 +33,9 @@ After=network.target
 
 [Service]
 WorkingDirectory=/home/user/web_site
-Environment="PATH=/home/user/web_site/.venv/bin"
+Environment="PATH=/home/user/web_site/VENV/bin"
 
-ExecStart=/home/user/web_site/.venv/bin/gunicorn --workers 3 --bind 127.0.0.1:5001 app:app
+ExecStart=/home/user/web_site/VENV/bin/gunicorn --workers 3 --bind 127.0.0.1:5001 app:app
 
 Restart=on-failure
 ExecReload=/bin/kill -s HUP $MAINPID
