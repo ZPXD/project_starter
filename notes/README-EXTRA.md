@@ -60,3 +60,27 @@ systemctl --user enable <nazwa>
 systemctl --user start <nazwa>
 loginctl enable-linger $USER
 ```
+
+  
+  
+  
+**5. NGINX**
+  
+Przykład pliku konfiguracyjnego.
+  
+```
+server {
+        listen 80;
+        listen [::]:80;
+
+        root /home/user/web_site/templates/html;
+        index index.html index.htm;
+
+        server_name web_site.pl www.web_site.pl;
+
+        location / {
+                include proxy_params;
+                proxy_pass http://127.0.0.1:5001;
+        }
+}
+```
