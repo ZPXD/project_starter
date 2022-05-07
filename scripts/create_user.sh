@@ -58,9 +58,11 @@ echo "1. In your computer terminall/powershell go to .ssh folder and download th
 if [ $(getent passwd ubuntu) ] ; then
 	cp -f /home/$user_name/.ssh/$klucz /home/ubuntu/$klucz
 	echo "scp -i twoj_klucz_z_aws.pem ubuntu@$server_ip:/home/ubuntu/$klucz $klucz"
+	rm /home/$user_name/.ssh/$klucz
 else
 	cp -f /home/$user_name/.ssh/$klucz /root/$klucz
 	echo "scp root@$server_ip:/root/$klucz $klucz"
+	rm /home/$user_name/.ssh/$klucz
 fi
 
 echo " "
