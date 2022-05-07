@@ -61,11 +61,11 @@ systemctl --user start <nazwa>
 loginctl enable-linger $USER
 ```
 
-  **5. NGINX
+**5. NGINX**
   
-  Przykład pliku konfiguracyjnego.
+Przykład pliku konfiguracyjnego.
   
-  ```
+```
   server {
         listen 80;
         listen [::]:80;
