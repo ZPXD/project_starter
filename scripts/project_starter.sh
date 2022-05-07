@@ -25,6 +25,8 @@ fi
 
 # Check domain.
 
+apt update --yes
+apt install curl --yes
 server_ip=`curl -s http://checkip.amazonaws.com`
 dns_ip=$(host $domena | grep address | awk 'NR==1{ print $4 }')
 #dns_ip=$(host $domena | awk '{ print $4 }')
@@ -37,7 +39,7 @@ fi
 
 # Server preparation.
 
-apt update --yes
+apt update --yes # Already updated
 
 systemctl stop apache
 apt remove apache2 --yes
@@ -50,7 +52,7 @@ systemctl start nginx
 
 # Required soft.
 
-apt install curl --yes
+apt install curl --yes # Already installed
 apt install git --yes
 
 # Python 3.
