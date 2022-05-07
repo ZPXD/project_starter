@@ -109,17 +109,21 @@ python3 $projects_folder/project_starter/scripts/project_starter.py $projects_fo
 # Create user.
 bash $projects_folder/project_starter/scripts/create_user.sh
 
-# Grant user the rights to the project folder.
-chown -R $project_user:$project_user $project_folder
-systemctl enable $project_name
+
+# Cybersecurity Tower scripts:
+git clone https://github.com/ZPXD/project_starter.git $projects_folder/tower_cybersecurity
 
 # Configure sshd_config.
-git clone https://github.com/ZPXD/project_starter.git $projects_folder/tower_cybersecurity
 bash $projects_folder/tower_cybersecurity/scripts/config_sshd_config.py
 echo "Logging in by password by root is not allowed now. Use $project_user key login."
 
 # Allow no password sudo for user.
 bash $projects_folder/tower_cybersecurity/scripts/nopassword_sudo.py $project_user 1
+
+
+# Grant user the rights to the projects folder and all projects within.
+chown -R $project_user:$project_user $projects_folder
+systemctl enable $project_name
 
 # Done.
 pip3 install lolpython
