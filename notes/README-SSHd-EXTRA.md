@@ -24,3 +24,7 @@ Match User some_user, Address x.y.z.v
     PasswordAuthentication yes
     PubkeyAuthentication yes
 ```
+
+Inne możliwości zarządzania uprawnieniami do logowania się na SSH to opcje konfiguracyjne:
+`AllowUsers` \ `DenyUsers`
+`AllowGroups` \ `DenyGroups`
