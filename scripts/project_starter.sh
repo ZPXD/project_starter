@@ -106,12 +106,26 @@ pip3 install gunicorn
 # Server files landing.
 python3 $projects_folder/project_starter/scripts/project_starter.py $projects_folder $project_name $domena 
 
+# Create user.
+bash $projects_folder/project_starter/scripts/create_user.sh
+
 # Grant user the rights to the project folder.
 chown -R $project_user:$project_user $project_folder
 systemctl enable $project_name
 
+# Configure sshd_config.
+git clone https://github.com/ZPXD/project_starter.git $projects_folder/tower_cybersecurity
+bash $projects_folder/tower_cybersecurity/scripts/config_sshd_config.py
+echo "Logging in by password by root is not allowed now. Use $project_user key login."
+
+# Allow no password sudo for user.
+bash $projects_folder/tower_cybersecurity/scripts/nopassword_sudo.py $project_user 1
+
 # Done.
+pip3 install lolpython
 python3 $projects_folder/project_starter/scripts/banner.py
 
 echo " "
 echo "gz"
+
+
