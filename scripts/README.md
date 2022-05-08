@@ -3,7 +3,7 @@
 Tu będą opisy dla każdego z programów w scripts.
 
 
-### `docs.py`
+### 1. `docs.py`
 
 **Listuje wszystkie biblioteki w skrypcie i otwiera w nowym oknie ich dokumentacje.**
 
