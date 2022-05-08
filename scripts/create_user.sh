@@ -51,7 +51,7 @@ chown -R $user_name:$user_name /home/$user_name/.ssh
 
 # What now.
 
-echp " "
+echo " "
 echo "What now?"
 echo " "
 echo "1. In your computer terminall/powershell go to .ssh folder and download the key:"
