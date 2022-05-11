@@ -12,8 +12,8 @@ echo " "
 # Some constans
 
 read -p 'Username (allowed characters: a-z, A-Z, 0-9, -, _, for more see NAME_REGEX): ' user_name
-klucz=zpxd_
-klucz+=$user_name
+read -p 'Keyname - same rules as for username. Try fg. (project_name + _ + user): ' klucz
+
 server_ip=`curl -s http://checkip.amazonaws.com`
 
 
