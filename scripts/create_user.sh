@@ -34,7 +34,7 @@ echo "$user_name ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 echo " "
 echo "What now?"
 echo " "
-echo "1. User server_keys_computer_side.py on Your computer to create pair of keys, or just run:
+echo "1. User server_keys_computer_side.py on Your computer to create pair of keys, or just run:"
 echo " " 
 echo "ssh-keygen -t rsa -b 4096 -N '' -f SCIEZKA_DO_KLUCZA \<<< y"
 echo "ssh-copy-id -i SCIEZKA_DO_KLUCZA LOGIN@IP_ADDR -f"
