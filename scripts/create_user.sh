@@ -12,18 +12,12 @@ echo " "
 # Some constans
 
 read -p 'Username (allowed characters: a-z, A-Z, 0-9, -, _, for more see NAME_REGEX): ' user_name
-read -p 'Keyname - same rules as for username. Try fg. (project_name + _ + user): ' klucz
-
-server_ip=`curl -s http://checkip.amazonaws.com`
-
 
 # To be developed - options:
 
 password=None # yes/no
 groups=None # standard / others
 allow_sudo=None # yes/no
-key=None # yes/no
-
 
 # Create user.
 
@@ -31,23 +25,9 @@ adduser $user_name --gecos GECOS --disabled-password --force-badname
 adduser $user_name sudo
 adduser $user_name www-data
 
-
 # Allow user to use sudo without password.
 
 echo "$user_name ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-
-
-# RSA Keys Pair.
-
-mkdir /home/$user_name/.ssh
-chmod 700 /home/$user_name/.ssh
-
-ssh-keygen -t rsa -b 4096 -f /home/$user_name/.ssh/$klucz -C $user_name -N ''
-cat /home/$user_name/.ssh/$klucz.pub > /home/$user_name/.ssh/authorized_keys
-chmod 600 /home/$user_name/.ssh/authorized_keys
-chmod 600 /home/$user_name/.ssh/$klucz
-chown -R $user_name:$user_name /home/$user_name/.ssh
-
 
 # What now.
 
@@ -59,8 +39,7 @@ echo " "
 echo "ssh-keygen -t rsa -b 4096 -N "" -f <SCIEZKA-DO-KLUCZA> <<< y"
 echo "ssh-copy-id -i <SCIEZKA-DO-KLUCZA> <LOGIN>@<IP-ADDR> -f"
 echo " "
-echo "In case of any troubles say so on ZPXD discord (open server). 
-echo "If you need help, don't just read it - do it. It won't appear by a fairies."
+echo "In case of any troubles say so on ZPXD discord (open server)."
 echo " " 
 
 echo " "
@@ -84,3 +63,5 @@ echo "ssh xd_$user_name"
 echo " "
 echo "4. Concider to block loging in to your server by root."
 echo " "
+
+echo "RLY."
