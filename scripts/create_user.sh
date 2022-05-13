@@ -31,7 +31,7 @@ echo "$user_name ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # What now.
 
-echp " "
+echo " "
 echo "What now?"
 echo " "
 echo "1. User server_keys_computer_side.py on Your computer to create pair of keys, or just run:
