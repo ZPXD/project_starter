@@ -21,7 +21,7 @@ allow_sudo=None # yes/no
 
 # Create user.
 
-adduser $user_name --gecos GECOS --disabled-password --force-badname
+adduser $user_name --gecos GECOS --force-badname
 adduser $user_name sudo
 adduser $user_name www-data
 
