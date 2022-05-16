@@ -18,5 +18,4 @@ def tp(line):
 	with open('output.txt', 'r') as f:
 		print(f.read())
 	os.system('cat output.txt')
-	print('\n')
 	os.system('rm output.txt')
