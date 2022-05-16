@@ -20,7 +20,3 @@ def tp(line):
 	os.system('cat output.txt')
 	print('\n')
 	os.system('rm output.txt')
-
-line = 'aaaaaaa'
-tp('aaaaaaa')
-
