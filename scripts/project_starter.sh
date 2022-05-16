@@ -25,6 +25,8 @@ fi
 
 # Check domain.
 
+apt update --yes
+apt install curl --yes
 server_ip=`curl -s http://checkip.amazonaws.com`
 dns_ip=$(host $domena | grep address | awk 'NR==1{ print $4 }')
 #dns_ip=$(host $domena | awk '{ print $4 }')
@@ -37,7 +39,7 @@ fi
 
 # Server preparation.
 
-apt update --yes
+apt update --yes # Already updated
 
 systemctl stop apache
 apt remove apache2 --yes
@@ -50,7 +52,7 @@ systemctl start nginx
 
 # Required soft.
 
-apt install curl --yes
+apt install curl --yes # Already installed
 apt install git --yes
 
 # Python 3.
@@ -104,12 +106,33 @@ pip3 install gunicorn
 # Server files landing.
 python3 $projects_folder/project_starter/scripts/project_starter.py $projects_folder $project_name $domena 
 
-# Grant user the rights to the project folder.
-chown -R $project_user:$project_user $project_folder
+
+
+# Cybersecurity Tower scripts:
+git clone https://github.com/ZPXD/project_starter.git $projects_folder/tower_cybersecurity
+
+# Allow key authentication.
+bash $projects_folder/tower_cybersecurity/scripts/allow_key_authentication.py
+
+# Allow no password sudo for user.
+bash $projects_folder/tower_cybersecurity/scripts/nopassword_sudo.py $project_user 1
+
+# Create user.
+bash $projects_folder/project_starter/scripts/create_user.sh
+
+# Grant user the rights to the projects folder and all projects within.
+chown -R $project_user:$project_user $projects_folder
 systemctl enable $project_name
 
 # Done.
+pip3 install lolpython
 python3 $projects_folder/project_starter/scripts/banner.py
 
 echo " "
+echo "Download your key to ssh, check connection AND when you are ready, block logins by password by running below command (as a root):"
+echo "bash $projects_folder/tower_cybersecurity/scripts/allow_key_authentication.py"
+
+echo " "
 echo "gz"
+
+

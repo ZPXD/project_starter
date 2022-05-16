@@ -12,35 +12,56 @@ echo " "
 # Some constans
 
 read -p 'Username (allowed characters: a-z, A-Z, 0-9, -, _, for more see NAME_REGEX): ' user_name
+read -p 'Keyname - same rules as for username. Try fg. (project_name + _ + user): ' klucz
+
+server_ip=`curl -s http://checkip.amazonaws.com`
+
 
 # To be developed - options:
 
 password=None # yes/no
 groups=None # standard / others
 allow_sudo=None # yes/no
+key=None # yes/no
+
 
 # Create user.
 
-adduser $user_name --gecos GECOS --force-badname
+adduser $user_name --gecos GECOS --disabled-password --force-badname
 adduser $user_name sudo
 adduser $user_name www-data
+
 
 # Allow user to use sudo without password.
 
 echo "$user_name ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
+
+# RSA Keys Pair.
+
+mkdir /home/$user_name/.ssh
+chmod 700 /home/$user_name/.ssh
+
+ssh-keygen -t rsa -b 4096 -f /home/$user_name/.ssh/$klucz -C $user_name -N ''
+cat /home/$user_name/.ssh/$klucz.pub > /home/$user_name/.ssh/authorized_keys
+chmod 600 /home/$user_name/.ssh/authorized_keys
+chmod 600 /home/$user_name/.ssh/$klucz
+chown -R $user_name:$user_name /home/$user_name/.ssh
+
+
 # What now.
 
-echo " "
+echp " "
 echo "What now?"
 echo " "
-echo "1. User server_keys_computer_side.py on Your computer to create pair of keys, or just run:"
-echo " " 
-echo "ssh-keygen -t rsa -b 4096 -N '' -f SCIEZKA_DO_KLUCZA \<<< y"
-echo "ssh-copy-id -i SCIEZKA_DO_KLUCZA LOGIN@IP_ADDR -f"
-echo " "
-echo "In case of any troubles say so on ZPXD discord (open server)."
-echo " " 
+echo "1. In your computer terminall/powershell go to .ssh folder and download the key:"
+if [ $(getent passwd ubuntu) ] ; then
+	cp -f /home/$user_name/.ssh/$klucz /home/ubuntu/$klucz
+	echo "scp -i twoj_klucz_z_aws.pem ubuntu@$server_ip:/home/ubuntu/$klucz $klucz"
+else
+	cp -f /home/$user_name/.ssh/$klucz /root/$klucz
+	echo "scp root@$server_ip:/root/$klucz $klucz"
+fi
 
 echo " "
 echo "2. Update your ~/.ssh/config file (add lines below and ensure unique Host's names):"
@@ -63,5 +84,3 @@ echo "ssh xd_$user_name"
 echo " "
 echo "4. Concider to block loging in to your server by root."
 echo " "
-
-echo "RLY."
