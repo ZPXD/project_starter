@@ -3,8 +3,6 @@ import os
 '''
 In case if Flask output print act wierd and you are in a hurry.
 
-cp ?/project_starter/scripts/terminal_print.py where/your/script/is/terminal_print.py
-
 from terminal_print import tp
 tp('something')
 
