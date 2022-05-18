@@ -22,27 +22,33 @@ fg. growing / self-actualising config file within your script.
 Two hands Gambit - 2 functions to import or copy and paste into your program.
 
 
-# Usage
+# Demonstration.
 
-from gambit import second_hand, first_hand
+git clone https://github.com/ZPXD/project_starter.git
+python3 project_starter/scripts/gambit.py
 
+
+# In action: (just paste it anywhere, it should work ~everywhere where linux, python and git is).
+
+import os
+os.system('git clone https://github.com/ZPXD/project_starter.git')
+
+from project_starter.script.gambit import second_hand, first_hand
 
 config = {'a':1,'b':2}
 
 def your_part(data):
-	# YOUR PROGRAM HERE THAT UPDATES
-	# data
-	import random
-	random_key = random.choice(string.ascii_lowercase)
-	value = len(data.keys()) ** 2
-	data[random_key] = value
-	return data
+    # YOUR PROGRAM HERE - UPDATE config
+    import random, string
+    random_key = random.choice(string.ascii_lowercase)
+    value = len(data.keys()) ** 2
+    config[random_key] = value
+    return config
 
 if __name__ == "__main__":
-	second_hand()
-	data = your_part()
-	fist_hand(config, 'config')
-
+    second_hand()
+    config = your_part(config)
+    fist_hand(config, 'config')
 
 
 Use with dignity and reason.
