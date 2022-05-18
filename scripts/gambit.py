@@ -4,13 +4,12 @@ import json
 import string
 import random
 
-import time
 from datetime import datetime
 
 
 
-'''
-2 hands gambit - living script.
+''''
+Two hands gambit - living script.
 
 
 This script data is self-actualising.
@@ -64,7 +63,10 @@ ZPXD, Łukasz Pintal.
 data = {
     "a": 4,
     "b": 2,
-    "z": 4
+    "z": 9,
+    "i": 9,
+    "m": 16,
+    "l": 25,
 }
 
 
@@ -119,10 +121,8 @@ def first_hand(living_data=None, living_data_name='data'):
 				new_file += line
 		with open(second_hand, 'w') as temp:
 			temp.write(new_file)
-			print(new_file)
 
 	# Move second hand.
-	time.sleep(0.1)
 	os.system('python3 {}'.format(second_hand))
 
 def second_hand():
@@ -133,16 +133,11 @@ def second_hand():
 	# Hands.
 	second_hand = os.getcwd() + '/' + sys.argv[0].split('/')[-1]
 	first_hand = second_hand.replace('second_hand_', '')
-	print(second_hand)
-	print(first_hand)
 
 	# Move script from second hand back to first.
 	if 'second_hand' in sys.argv[0]:
-		time.sleep(0.1)
 		os.system('cp {} {}'.format(second_hand, first_hand))
-		time.sleep(0.1)
 		os.system('rm {}'.format(second_hand))
-		time.sleep(0.1)
 		sys.exit(0)
 
 
