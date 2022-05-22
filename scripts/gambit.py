@@ -69,6 +69,7 @@ data = {
     "l": 25,
 }
 
+program_path = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
 
 # 2. Program body. This is the part of the program. It could be 1 or 10000 lines.
@@ -97,8 +98,8 @@ def first_hand(living_data=None, living_data_name='data'):
 	'''
 
 	# Hands.
-	first_hand = os.getcwd() + '/' + sys.argv[0]
-	second_hand = first_hand.replace(sys.argv[0], 'second_hand_{}'.format(sys.argv[0]))
+	first_hand = program_path + '/' + sys.argv[0].split('/')[-1]
+	second_hand = first_hand.replace(sys.argv[0].split('/')[-1], 'second_hand_{}'.format(sys.argv[0].split('/')[-1]))
 
 	# Hide second hand.
 	if 'second_hand' in os.listdir():
@@ -131,7 +132,7 @@ def second_hand():
 	'''
 
 	# Hands.
-	second_hand = os.getcwd() + '/' + sys.argv[0].split('/')[-1]
+	second_hand = program_path + '/' + sys.argv[0].split('/')[-1]
 	first_hand = second_hand.replace('second_hand_', '')
 
 	# Move script from second hand back to first.
